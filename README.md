@@ -1,3 +1,13 @@
+# 问题
+
+1.iOS 小组件单独引用了 Alamofire，需要在对应的库配置开启 bitcode
+
+2.帖子详情渲染还有问题
+
+3.消息列表 和个人中心没有的，找到可用的方案大概是直接解析 html，不确定 v2 是否鼓励这种方式开发第三方客户端
+
+4.搜索也还没
+
 # About
 
 基于 v2ex 开放接口的 flutter 客户端实现，最新 热门 节点帖子列表，所有节点，帖子详情 回复列表 感谢 🙏https://github.com/igaozp/V2EX-API
@@ -5,12 +15,6 @@
 <img src='https://tva1.sinaimg.cn/large/0081Kckwgy1gkgjztg23uj30ku17yjug.jpg' widh=240 height=540/>
 <img src='https://tva1.sinaimg.cn/large/0081Kckwgy1gkgk1e98s6j30ku17ygmu.jpg' widh=240 height=540/>
 <img src='https://tva1.sinaimg.cn/large/0081Kckwgy1gkgk1e98s6j30ku17ygmu.jpg' widh=240 height=540/>
-
-# 问题
-
-1.iOS 小组件单独引用了 Alamofire，需要在对应的库配置开启 bitcode
-
-2.帖子详情渲染还有问题
 
 # iv2ex
 
