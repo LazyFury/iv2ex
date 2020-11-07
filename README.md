@@ -6,6 +6,12 @@
 <img src='https://tva1.sinaimg.cn/large/0081Kckwgy1gkgk1e98s6j30ku17ygmu.jpg' widh=240 height=540/>
 <img src='https://tva1.sinaimg.cn/large/0081Kckwgy1gkgk1e98s6j30ku17ygmu.jpg' widh=240 height=540/>
 
+# 问题
+
+1.iOS 小组件单独引用了 Alamofire，需要在对应的库配置开启 bitcode
+
+2.帖子详情渲染还有问题
+
 # iv2ex
 
 A new Flutter project.
