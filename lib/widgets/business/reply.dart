@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iv2ex/model/reply.dart';
 import 'package:iv2ex/model/topic.dart';
 import 'package:iv2ex/utils/iconFont.dart';
-import 'package:iv2ex/utils/renderContent.dart';
+import 'package:iv2ex/widgets/system/renderContent.dart';
 import 'package:iv2ex/widgets/system/NetImage.dart';
 import 'package:iv2ex/widgets/system/skeleton/skeleton.dart';
 

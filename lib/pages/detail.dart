@@ -5,7 +5,7 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:iv2ex/model/reply.dart';
 import 'package:iv2ex/model/topic.dart';
 import 'package:iv2ex/server/v2ex.dart';
-import 'package:iv2ex/utils/renderContent.dart';
+import 'package:iv2ex/widgets/system/renderContent.dart';
 import 'package:iv2ex/widgets/business/reply.dart';
 import 'package:iv2ex/widgets/system/NetImage.dart';
 import 'package:iv2ex/widgets/system/list/empty.dart';
