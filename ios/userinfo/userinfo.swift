@@ -8,55 +8,65 @@
 import WidgetKit
 import SwiftUI
 import Intents
-import Alamofire
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(),user: User(json: Dictionary()),image: nil, configuration: ConfigurationIntent())
     }
-
+    
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
         let entry = SimpleEntry(date: Date(),user: User(json: Dictionary()),image: nil, configuration: configuration)
         completion(entry)
     }
-
+    
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
-
+        
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let nextRefresh = Calendar.current.date(byAdding: .hour, value: 1, to: Date())!
         
         let url = URL(string: "https://www.v2ex.com/api/members/show.json?username=suke971219")!
-        AF.request(url,method: HTTPMethod.get).responseJSON{
-            response in
-            switch(response.result){
-            case .success(let json):
-                let dict = json as! Dictionary<String,Any>
-                let user = User(json: dict)
-                
-                guard let imageUrl = URL(string:user.avatar_large!) else {
-                    return
-                }
-                URLSession.shared.dataTask(with: imageUrl){
-                    (data,response,error) in
-                    if let image = UIImage(data: data!){
-                        
-                        let entry = SimpleEntry(date: nextRefresh,user: user,image: image, configuration: configuration)
-                        entries.append(entry)
-                        let timeline = Timeline(entries: entries, policy: .after(nextRefresh))
-                        completion(timeline)
-                        
-                    }else{
-                        print(error ?? "err 加载图片失败")
-                    }
-                }.resume()
-                
-            case .failure(let err):
-                print(err)
+        print("debugger")
+        URLSession.shared.dataTask(with: url){
+            (data,response,error) in
+            guard let data = data, error == nil else {
+                // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                return
             }
-        }
-        
-        
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+            }
+            print("success======>>>>>>>>>")
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? Dictionary<String,Any> {
+                    let user = User(json: json)
+                    
+                    guard let imageUrl = URL(string:user.avatar_large!) else {
+                        return
+                    }
+                    URLSession.shared.dataTask(with: imageUrl){
+                        (data,response,error) in
+                        if let image = UIImage(data: data!){
+                            
+                            let entry = SimpleEntry(date: nextRefresh,user: user,image: image, configuration: configuration)
+                            entries.append(entry)
+                            let timeline = Timeline(entries: entries, policy: .after(nextRefresh))
+                            completion(timeline)
+                            
+                        }else{
+                            print(error ?? "err 加载图片失败")
+                        }
+                    }.resume()
+                }
+            }catch let error  {
+                print("catch let error")
+                print(error)
+            }
+        }.resume()
         
         
     }

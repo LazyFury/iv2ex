@@ -14,6 +14,8 @@
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
+		BA62B6A3257BC046008F0393 /* request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62B6A2257BC046008F0393 /* request.swift */; };
+		BA62B6A4257BC046008F0393 /* request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62B6A2257BC046008F0393 /* request.swift */; };
 		BA93E7CA2547A9750037C782 /* timeStampToCurrennTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93E7C92547A9750037C782 /* timeStampToCurrennTime.swift */; };
 		BA93E7CC2547A97C0037C782 /* timeStampToCurrennTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93E7C92547A9750037C782 /* timeStampToCurrennTime.swift */; };
 		BA93E7D22547A98A0037C782 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93E7CF2547A98A0037C782 /* WebView.swift */; };
@@ -82,6 +84,7 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA62B6A2257BC046008F0393 /* request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = request.swift; sourceTree = "<group>"; };
 		BA93E7C92547A9750037C782 /* timeStampToCurrennTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timeStampToCurrennTime.swift; sourceTree = "<group>"; };
 		BA93E7CF2547A98A0037C782 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		BA93E7D02547A98A0037C782 /* networkImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = networkImage.swift; sourceTree = "<group>"; };
@@ -187,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				BA93E7C92547A9750037C782 /* timeStampToCurrennTime.swift */,
+				BA62B6A2257BC046008F0393 /* request.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -277,7 +281,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1210;
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					97C146ED1CF9000F007C117D = {
@@ -428,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BADB16662546E07F00A91162 /* userinfo.intentdefinition in Sources */,
+				BA62B6A3257BC046008F0393 /* request.swift in Sources */,
 				BA93E7D62547A98A0037C782 /* v2User.swift in Sources */,
 				BA93E7D22547A98A0037C782 /* WebView.swift in Sources */,
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
@@ -444,6 +449,7 @@
 				BADB16602546E07D00A91162 /* userinfo.swift in Sources */,
 				BA93E7D52547A98A0037C782 /* networkImage.swift in Sources */,
 				BA93E7D32547A98A0037C782 /* WebView.swift in Sources */,
+				BA62B6A4257BC046008F0393 /* request.swift in Sources */,
 				BA93E7CC2547A97C0037C782 /* timeStampToCurrennTime.swift in Sources */,
 				BA93E7D72547A98A0037C782 /* v2User.swift in Sources */,
 				BADB16652546E07F00A91162 /* userinfo.intentdefinition in Sources */,
@@ -614,7 +620,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

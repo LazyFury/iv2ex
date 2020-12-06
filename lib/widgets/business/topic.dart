@@ -1,6 +1,7 @@
 // 帖子列表item
 
 import 'package:flutter/material.dart';
+import 'package:html/parser.dart';
 import 'package:iv2ex/model/member.dart';
 import 'package:iv2ex/model/topic.dart';
 import 'package:iv2ex/utils/utils.dart';
@@ -46,7 +47,8 @@ class Topic extends StatefulWidget {
 
 class TopicState extends State<Topic> {
   String get renderContent {
-    return widget.topic.content.replaceAll(RegExp(r'[\r\n]+'), "\n");
+    var document = parse(widget.topic.content);
+    return document.nodes.map((el) => el.text).toList().join("");
   }
 
   @override
