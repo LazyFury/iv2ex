@@ -3,6 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:iv2ex/widgets/system/safeArea/safeArea.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+openURl(BuildContext context, String url) {
+  Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
+    return webview(context, url);
+  }));
+}
+
 Widget webview(BuildContext context, String url) {
   return Material(
       child: Column(

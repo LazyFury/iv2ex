@@ -1,7 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:html/parser.dart';
 import 'package:html/dom.dart' show Node;
+import 'package:iv2ex/pages/webview.dart';
 import 'package:iv2ex/widgets/system/NetImage.dart';
+import 'package:iv2ex/widgets/system/touchView.dart';
 
 Widget renderContent(BuildContext context, String content) {
   content = content.replaceAll(RegExp(r'[\r\n]+'), "\n\n");
@@ -9,7 +13,7 @@ Widget renderContent(BuildContext context, String content) {
   var at = r'@\w+';
   // com|net|cn|org|app|live|top|xyz|work|site|com.cn|online|tv|ltd|tech|club|ink|store
   var url =
-      r'https?:\/\/([a-zA-Z0-9 % \- \.]+\.[a-zA-Z]{2,6})+[\w\/ % & = @ \-  _ \;  ~ \. \? # \u4E00-\u9FA5]+';
+      r'(((ht|f)tps?):\/\/)?[\w-]+(\.[\w-]+)+([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?';
 
   var localUrl = r'\/(go|t)\/[a-zA-Z0-9]+';
 
@@ -21,7 +25,10 @@ Widget renderContent(BuildContext context, String content) {
   var reg = RegExp('($at|$img|$elImg|$pic|$url|$localUrl)');
 
   var str1 = content.replaceAllMapped(reg, (m) {
-    return "<replaceTag>${m[0]}<replaceTag>";
+    if (RegExp("$url").hasMatch(m[0]) && !RegExp("$pic").hasMatch(m[0])) {
+      return "<link href='${m[0]}'></link>";
+    }
+    return "${m[0]}";
   });
   // print(content);
   // print(str1.split(r"<replaceTag>"));
@@ -32,10 +39,29 @@ Widget renderContent(BuildContext context, String content) {
         return showNode(e);
       }).toList());
     } else {
-      print(el.toString());
+      print("h:" + el.toString());
       if (el.toString() == "<html img>") {
-        print(el.attributes);
-        return WidgetSpan(child: imgWidget(el.attributes["src"]));
+        // print(el.attributes);
+        return WidgetSpan(
+            child: TouchView(
+                onTap: () {
+                  openURl(context, el.attributes['src'] ?? "http://v2ex.com");
+                },
+                child: imgWidget(el.attributes["src"])));
+      }
+      if (el.toString() == "<html link>") {
+        print(el.text);
+        return WidgetSpan(
+          child: TouchView(
+            onTap: () {
+              openURl(context, el.attributes['href'] ?? "http://v2ex.com");
+            },
+            child: Text(
+              el.attributes['href'] ?? "",
+              style: TextStyle(color: Colors.blue),
+            ),
+          ),
+        );
       }
       // 换行
       if (el.nodeType == 1) {
