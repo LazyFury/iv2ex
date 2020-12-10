@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:html/parser.dart';
 import 'package:html/dom.dart' show Node;
@@ -85,56 +83,56 @@ Widget renderContent(BuildContext context, String content) {
     return showNode(element);
   }).toList()));
 
-  return Text.rich(TextSpan(children: [
-    ...str1.split(r"<replaceTag>").map((e) {
-      var atReg = RegExp('$at');
-      var picReg = RegExp('$pic');
-      var imgReg = RegExp('$img');
-      var urlReg = RegExp('$url');
-      var elImgReg = RegExp("$elImg");
-      if (atReg.hasMatch(e)) {
-        return TextSpan(text: e, style: TextStyle(color: Colors.blue));
-      }
+  // return Text.rich(TextSpan(children: [
+  //   ...str1.split(r"<replaceTag>").map((e) {
+  //     var atReg = RegExp('$at');
+  //     var picReg = RegExp('$pic');
+  //     var imgReg = RegExp('$img');
+  //     var urlReg = RegExp('$url');
+  //     var elImgReg = RegExp("$elImg");
+  //     if (atReg.hasMatch(e)) {
+  //       return TextSpan(text: e, style: TextStyle(color: Colors.blue));
+  //     }
 
-      if (elImgReg.hasMatch(e)) {
-        var match = elImgReg.firstMatch(e);
-        var title = match.group(1);
-        var url = match.group(1);
-        if (url != null) {
-          return WidgetSpan(child: imgWidget(url));
-        }
-      }
+  //     if (elImgReg.hasMatch(e)) {
+  //       var match = elImgReg.firstMatch(e);
+  //       var title = match.group(1);
+  //       var url = match.group(1);
+  //       if (url != null) {
+  //         return WidgetSpan(child: imgWidget(url));
+  //       }
+  //     }
 
-      if (imgReg.hasMatch(e)) {
-        var match = imgReg.firstMatch(e);
-        var title = match.group(1);
-        var url = match.group(2);
-        print("markdown img url:" + url);
-        if (url != "") {
-          return WidgetSpan(
-              child: Column(
-            children: [
-              imgWidget(url),
-              Text(
-                title ?? "引用图片",
-                style: TextStyle(color: Colors.grey),
-              ),
-            ],
-          ));
-        }
-      }
+  //     if (imgReg.hasMatch(e)) {
+  //       var match = imgReg.firstMatch(e);
+  //       var title = match.group(1);
+  //       var url = match.group(2);
+  //       print("markdown img url:" + url);
+  //       if (url != "") {
+  //         return WidgetSpan(
+  //             child: Column(
+  //           children: [
+  //             imgWidget(url),
+  //             Text(
+  //               title ?? "引用图片",
+  //               style: TextStyle(color: Colors.grey),
+  //             ),
+  //           ],
+  //         ));
+  //       }
+  //     }
 
-      if (picReg.hasMatch(e)) {
-        return WidgetSpan(child: imgWidget(e));
-      }
+  //     if (picReg.hasMatch(e)) {
+  //       return WidgetSpan(child: imgWidget(e));
+  //     }
 
-      if (urlReg.hasMatch(e)) {
-        return TextSpan(text: e, style: TextStyle(color: Colors.blue));
-      }
+  //     if (urlReg.hasMatch(e)) {
+  //       return TextSpan(text: e, style: TextStyle(color: Colors.blue));
+  //     }
 
-      return TextSpan(text: e);
-    }).toList()
-  ]));
+  //     return TextSpan(text: e);
+  //   }).toList()
+  // ]));
 }
 
 Widget imgWidget(String url) {
