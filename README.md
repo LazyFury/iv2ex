@@ -1,6 +1,6 @@
 # 问题
 
-1.iOS 小组件单独引用了 Alamofire，需要在对应的库配置开启 bitcode
+del（已切换到原生实现，移除alamofire）:1.iOS 小组件单独引用了 Alamofire，需要在对应的库配置开启 bitcode
 
 2.帖子详情渲染还有问题
 

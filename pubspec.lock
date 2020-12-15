@@ -313,7 +313,7 @@ packages:
     source: hosted
     version: "0.1.4"
   path_provider:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: path_provider
       url: "https://pub.flutter-io.cn"
@@ -423,7 +423,7 @@ packages:
     source: hosted
     version: "1.8.0-nullsafety.2"
   sqflite:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: sqflite
       url: "https://pub.flutter-io.cn"
