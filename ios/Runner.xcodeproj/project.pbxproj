@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
+		55D3944BBDAE05074DFDB031 /* Pods_widgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 707F9C1BC899477B643813C9 /* Pods_widgetExtension.framework */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
@@ -31,7 +32,6 @@
 		BAFB569625822446004E0B5A /* v2User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB569025822446004E0B5A /* v2User.swift */; };
 		BAFB56982582244B004E0B5A /* request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB5668258223EC004E0B5A /* request.swift */; };
 		BAFB56992582244B004E0B5A /* timeStampToCurrennTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB5669258223EC004E0B5A /* timeStampToCurrennTime.swift */; };
-		F2B810F22B45D95A418040A3 /* Pods_widgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 707F9C1BC899477B643813C9 /* Pods_widgetExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,7 +120,7 @@
 			files = (
 				BAFB567825822421004E0B5A /* SwiftUI.framework in Frameworks */,
 				BAFB567625822421004E0B5A /* WidgetKit.framework in Frameworks */,
-				F2B810F22B45D95A418040A3 /* Pods_widgetExtension.framework in Frameworks */,
+				55D3944BBDAE05074DFDB031 /* Pods_widgetExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
