@@ -25,6 +25,15 @@ class MemberState extends State<Member> {
                 }));
               },
               child: Text("login"),
+            ),
+            TouchView(
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return webview(context, "https://www.v2ex.com");
+                }));
+              },
+              child: Text("v2ex"),
             )
           ],
         ),

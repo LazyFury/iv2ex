@@ -25,7 +25,7 @@ struct Provider: IntentTimelineProvider {
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let nextRefresh = Calendar.current.date(byAdding: .hour, value: 1, to: Date())!
         
-        let url = URL(string: "https://www.v2ex.com/api/members/show.json?username=suke971219")!
+        let url = URL(string: "https://www.v2ex.com/api/members/show.json?username=treblex")!
         print("debugger")
         URLSession.shared.dataTask(with: url){
             (data,response,error) in
