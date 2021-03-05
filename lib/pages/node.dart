@@ -13,7 +13,7 @@ class Node extends StatefulWidget {
 }
 
 class NodeState extends State<Node> {
-  List<NodeModal> nodes = new List<NodeModal>();
+  List<NodeModal> nodes = List<NodeModal>.empty();
 
   List<NodeModal> rootNode = [
     NodeModal.fromJSON({"name": "all", "title": "全部节点"}),

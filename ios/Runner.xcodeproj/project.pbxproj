@@ -835,12 +835,13 @@
 				DEVELOPMENT_TEAM = 2LRA8W67HD;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = notify/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sukeai.v2ex.iv2ex.notify;
@@ -865,12 +866,13 @@
 				DEVELOPMENT_TEAM = 2LRA8W67HD;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = notify/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sukeai.v2ex.iv2ex.notify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -892,12 +894,13 @@
 				DEVELOPMENT_TEAM = 2LRA8W67HD;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = notify/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sukeai.v2ex.iv2ex.notify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
